@@ -1,0 +1,38 @@
+body{
+    margin:0;
+}
+a {
+    color:black;
+    text-decoration: none;
+}
+h1 {
+    font-size:45px;
+    text-align: center;
+    border-bottom:1px solid gray;
+    margin:0;
+    padding:20px;
+}
+#grid {
+    display:grid;
+    grid-template-columns: 150px 1fr;
+}
+#grid ol{/* 다른 곳에서도 ol태그가 쓰일 수 있기 때문에 부모가 grid인 id를 가진 놈의 ol임을 명시해줘야한다.*/
+    border-right:1px solid red;
+    width:100px;
+    margin:0;
+    padding:20px;
+}
+#grid #article{/*article이 어차피 id라 안해줘도 되는데 의미를 확실히 나타낼 수 있게 #grid를 붙여준다.*/
+    padding-left:25px;
+}
+@media(max-width:800px){
+    #grid{
+        display:block; /*원래 그리드로 있던 element(태그)들이 block으로 되면서 화면전체(가로영역전체)를 차지하게 된다.*/
+    }
+    #grid ol{/*그냥 ol이라고 하면 인식 못한다. 위에서 선언해준 것처럼 #grid ol이라고 해야한다.*/
+        border-right:none;
+    }
+    h1{
+        border-bottom:none;
+    }
+}
